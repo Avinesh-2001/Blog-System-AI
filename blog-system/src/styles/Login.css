@@ -1,0 +1,305 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-form-container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: formAppear 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand Section Styles */
+
+.brand-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  animation: brandAppear 1s ease-out;
+ 
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-name{
+  font-size: 2rem !important;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+
+.brand-tagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  animation: taglineSlide 1s ease-out 0.3s both;
+}
+
+
+
+/* Form Group Styles */
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1.2rem 1rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4f9fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  transform-origin: left top;
+  padding: 0 0.2rem;
+}
+
+
+.form-control:focus ~ .floating-label,
+.form-control:not(:placeholder-shown) ~ .floating-label {
+  top: 0.8rem;
+  transform: translateY(0) scale(0.85);
+  color: #4f9fff;
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+
+.form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Button Styles */
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, #4f9fff, #2e7bff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(79, 159, 255, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.google-btn {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Divider Styles */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+  padding: 0 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* Background Animations */
+.background-shapes div {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: #4f9fff;
+  top: -150px;
+  right: -150px;
+  animation: float 8s infinite;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: #ff4f4f;
+  bottom: -100px;
+  left: -100px;
+  animation: float 10s infinite reverse;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  background: #4fff83;
+  top: 50%;
+  left: 50%;
+  animation: float 12s infinite;
+}
+
+/* Animations */
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brandAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes taglineSlide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Styles */
+.error-message {
+  color: #ff4f4f;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-form-container {
+    width: 90%;
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+ 
+
+  .form-control {
+    padding: 0.8rem;
+  }
+}
