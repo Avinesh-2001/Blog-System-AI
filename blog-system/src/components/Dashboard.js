@@ -65,8 +65,8 @@ const Dashboard = () => {
   const generateContent = async (input) => {
     try {
       const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCrugYr_xzvVJnjt6v2CPiDmg3GZlp07zA",
-        method: "post",
+        url: ;
+      method: "post",
         data: {
           contents: [{ parts: [{ text: input }] }],
         },
